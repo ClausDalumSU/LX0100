@@ -1,6 +1,6 @@
 # LX0100
 
-##Formål
+#Formål
 At give deltagere viden og færdigheder til at kunne:
 
 Benytte LINUX/UNIX på brugerniveau
@@ -25,7 +25,7 @@ Der er masser af øvelser og hands-on undervejs, som giver dig en dybdegående v
 
 Kurset, SU-100, har været en del af SuperUsers kursusudbud siden 1984, hvilket beviser relevansen af viden og kunnen indenfor LINUX/UNIX i rigtig mange dele af IT-verdenen.
 
-##Forudsætninger
+#Forudsætninger
 For at deltage på dette kursus anbefaler vi, at du forinden har deltaget på, eller har viden svarende til
 ```text
 SU-099 - UNIX Introduktion
@@ -53,7 +53,6 @@ Brug af online dokumentation
 Manualsider og hjælpeprogrammer
 
 Standard-editoren 'vi'.
-
 
 Fil- og kataloghåndtering.
 
