@@ -1,6 +1,6 @@
 # LX0100
 
-#Formål
+## Formål
 At give deltagere viden og færdigheder til at kunne:
 
 Benytte LINUX/UNIX på brugerniveau
@@ -41,51 +41,48 @@ Indhold
 UNIX baggrund
 ```
 
+  * Introduktion til UNIX og UNIX-filosofien.
 
-Introduktion til UNIX og UNIX-filosofien.
-Lidt om UNIX's historie, udvikling og de forskellige versioner.
+  * Lidt om UNIX's historie, udvikling og de forskellige versioner.
 
-UNIX-filstrukturen og de grundlæggende kommandoer.
+  * UNIX-filstrukturen og de grundlæggende kommandoer.
+  
+  * Brug af online dokumentation
 
+  * Manualsider og hjælpeprogrammer
 
-Brug af online dokumentation
+  * Standard-editoren 'vi'.
 
-Manualsider og hjælpeprogrammer
+  * Fil- og kataloghåndtering.
 
-Standard-editoren 'vi'.
+  * Lidt om, hvordan det hele hænger sammen, og hvordan man finder rundt på et UNIX system.
 
-Fil- og kataloghåndtering.
+  * Procesbegreber og -håndtering.
 
-Lidt om, hvordan det hele hænger sammen, og hvordan man finder rundt på et UNIX system.
+  * UNIX har altid mange processer kørende.
+  
+  * Vi ser på, hvad der sker i en UNIX proces.
 
-Procesbegreber og -håndtering.
+  * Brugere og brugerhåndtering.
 
-UNIX har altid mange processer kørende.
-Vi ser på, hvad der sker i en UNIX proces.
+  * Filrettigheder og hvordan man ændrer dem.
 
-Brugere og brugerhåndtering.
+  * Introduktion til UNIX-kommandofortolkeren
 
+  * Korn shell, Bourne shell og bash
 
-Filrettigheder og hvordan man ændrer dem.
+  * Shell-mekanismer
 
+  * Wildcards, redigering og pipes.
 
-Introduktion til UNIX-kommandofortolkeren
+  * Introduktion til shellscripts.
 
-Korn shell, Bourne shell og bash
+  * Backup på brugerniveau.
 
-Shell-mekanismer
+  * Fil-pakning
+  * Komprimering
 
-Wildcards, redigering og pipes.
+  * Brug af lokalnet, services og værktøjer
 
-Introduktion til shellscripts.
-
-
-Backup på brugerniveau.
-
-Fil-pakning
-Komprimering
-
-Brug af lokalnet, services og værktøjer
-
-Hvordan man logger ind på andre systemer og kopierer filer imellem forskellige maskiner.
-Andre services og værktøjer i forbindelse med internet/intranet.
+  * Hvordan man logger ind på andre systemer og kopierer filer imellem forskellige maskiner.
+  * Andre services og værktøjer i forbindelse med internet/intranet.
