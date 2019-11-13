@@ -1,0 +1,53 @@
+
+6.2
+
+Filtræ 	Forklaring
+
+kilde: http://www.linuxbog.dk/unix/unix/basal-unix.html 
+
+/ 	(Roden) Toppen af katalogstrukturen 
+
+/usr 	(vigtige kommandoer) Her ligger delte data og programmer der ikke ændres og ikke er specifikke for lige netop den enkelte maskine. 
+	
+
+/tmp 	Indeholder (Temporære filer) altså midlertidige filer. De fleste programmer lægger automatisk midlertidige filer her. Som regel sletter systemet dem, når der rebootes.
+
+/dev 	Indeholder alle drivere, dvs. adgang til alle enheder såsom harddiske, cd-rom-drev, mus, tastatur og printer går igennem dette .
+
+/etc 	Dette katalog indeholder systemopsætningsfilerne og filerne, der er ansvarlige for systemets opstart, og grafiksystemets opsætning 
+	(noget ala CONFIG.SYS og AUTOEXEC.BAT i DOS).
+
+
+/home 	er hjemmekataloget for alle brugerkonti med undtagelse af rootbrugeren. 
+        Det anbefales ikke at logge på som root, men i stedet oprette brugere med SUDO rettigheder- hvis brugeren har administrative opgaver på systemet)
+
+/root 	Systemadministratorens hjemmekatalog.
+
+/sbin 	(administrative programmer) Her ligger de programmer der generelt kun er brugbare for systemadministratoren og er nødvendige for at systemet fungerer.
+
+
+/var 	Indeholder datafiler hvis indhold kan ændres mens systemet er i drift. Det er for eksempel  printerkøer, logfiler og administrative data.
+
+
+**********************************************************************************************************************************************
+
+/bin 	Her er de mest nødvendige systemkommandoer gemt.
+
+/lib 	Indeholder systemets delte filer. Linux sparer hukommelse ved at lægge kode, som bruges af mange programmer, ind i en fil, kaldet "shared library". På den måde vil der kun eksistere én kopi af filen i hukommelsen, når den bliver brugt.
+
+/opt 	Er reserveret til installation af valgfrie programpakker. SuSE placerer store programpakker som KDE og StarOffice i /opt, så hvis du installerer SuSE skal du derfor sørge for, at dette katalog har en del plads.
+
+/lost+found 	Hvis harddisken laver fejl, vil systemet selv forsøge at genskabe filerne, og hvis det ikke kan finde ud af, hvor i filtræet filen var placeret, vil den blive placeret i /lost+found.
+
+/mnt 	Hvis du vil have adgang til en cd-rom, et ZIP-drev eller en diskette, er det som regel i denne del af filsystemet, du får adgang til dem.
+
+/proc 	Dette katalog indeholder dynamisk opdaterede oplysninger om de kørende programmer og Linux-kernens status.
+
+
+
+
+
+
+/usr/local 	Her kan systemadministratoren installerer programmer og data der specifikke for maskinen. På systemer der overholder Linux Standard Base vil /usr/local ikke blive overskrevet ved systemopgraderinger.
+
+
