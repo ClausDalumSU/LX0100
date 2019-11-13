@@ -25,21 +25,19 @@ Der er masser af øvelser og hands-on undervejs, som giver dig en dybdegående v
 
 Kurset, SU-100, har været en del af SuperUsers kursusudbud siden 1984, hvilket beviser relevansen af viden og kunnen indenfor LINUX/UNIX i rigtig mange dele af IT-verdenen.
 
-#Forudsætninger
-For at deltage på dette kursus anbefaler vi, at du forinden har deltaget på, eller har viden svarende til
-```text
-SU-099 - UNIX Introduktion
-Videre forløb
+## Videre forløb
 SU-110 - LINUX/UNIX Konfiguration og Drift Grundkursus
-Materialer
+
+## Materialer
 SuperUsers kursusmateriale
-Tilhørende certificering
+
+## Tilhørende certificering
 PL0090 - SCA - LINUX/UNIX Certified Administrator
-Tilhørende test
+
+## Tilhørende test
 TSU-100 - LINUX/UNIX Basics
-Indhold
-UNIX baggrund
-```
+
+## Indhold
 
   * Introduktion til UNIX og UNIX-filosofien.
 
