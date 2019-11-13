@@ -1,0 +1,3226 @@
+
+
+
+
+#################
+#3.7
+#################
+
+ ls -l #(kommando med argument)
+	$ cat fil3
+
+ ls ; cat fil3
+
+## En tekst der fylder mere end en linie:
+echo ”Her er en tekstlinie,
+	> der fylder mere end 1 linie på skærmen”
+
+#################
+#3.8
+#################
+
+## En kommando kan skrives på flere linier
+ ls -la | sort -n \
+	> -k5	
+
+# “luft” i kommandoerne for gøre linen læsevenlig:
+
+ echo Her    er lidt        tekst
+
+# er eksempel på luft i melllem kommadoerne:
+
+ ls -la   |    sort -n -k5  |    more
+
+#################
+#3.9
+#################
+
+## LAD KURSISTERNE SELV AFPRØVE FØLGENDE KOMMANDOER:
+#(SKIFT TIL SLIDER)
+date
+who
+cal
+ls
+pwd
+
+På dansk:
+LC_ALL=da_DK.UTF-8 cal
+LC_ALL=da_DK.UTF-8 date
+LC_ALL=da_DK.UTF-8 date +'%A d. %d. %B %Y'
+echo 'I Dag er det '; LC_ALL=da_DK.UTF-8 date +'%A d. %d. %B %Y'
+
+#################
+#3.10
+#################
+ ls
+ ls -la
+ ls -l -a
+
+#################
+#3.11
+#################
+
+## Manual og hjælp til kommandoerne:
+ man ls
+
+ ls --help
+
+#################
+#3.12
+#################
+
+  ls -l fil3        #(Udskriver lang oplysningslinie om fil3)
+
+  ls -l fil1 fil2 	    #(Udskriver lange oplysningslinier om 
+             	      de to filer a og b)
+
+  ls -l  	 #(Når der ikke angives nogen parametre,
+          	tages udgangspunkt i arbejdskataloget!
+          	Altså udskrives lange oplysningslinier om 
+          	filerne i arbejdskataloget - dog ikke 
+          	filer, hvis navn begynder med punktum)
+
+  ls -l /usr  	#(Udskriver lange oplysningslinier om
+             	filerne i kataloget /usr -- dog ikke 
+             	filer, hvis navn begynder med punktum)
+
+#################
+#3.13
+#################
+
+  cat brev  #(Udskriver lndholdet af filen brev)
+
+  cat       #(Udskriver linier fra tastaturet)
+
+
+#################
+ø3.1
+#################
+
+Øvelse 1. a
+Sammenlign kommandoerne inden for hver ”gruppe”. 
+
+ ls gurues
+ ls -l gurues
+
+ ls dir
+ ls -l dir
+
+ ls -l  larkA larkB
+ ls -lr larkA larkB
+ ls -l  larkB larkA
+
+Øvelse 1. b
+Er der forskel på følgende to kommandoer:
+ ls -li gurues
+ ls -il gurues
+
+Øvelse 1. c
+Sammenlign følgende kommandoer. 
+ ls -l lark
+ ls -lc lark
+ ls -lu lark
+
+Øvelse 1. d
+Hvad er forskellen på følgende kommandoer:
+ ls 
+ ls -m
+ ls -x
+ ls -R
+ ls -F
+
+#################
+lf3.1
+#################
+Løsningsforslag/kommentarer:
+Øvelse 1. c
+Sammenlign følgende kommandoer. 
+$ ls -l lark  (normal listevisning)
+$ ls -lc lark  (Tidspunkt for sidste ændring af fil status information) med -ltc sorteres efter trispunktet
+$ ls -lu lark (viser det seneste filen har været tilgået)
+
+Øvelse 1. d
+Hvad er forskellen på følgende kommandoer:
+$ ls   (normal listevisning)
+$ ls -m   (kommasepareret listevisning)
+$ ls -x   (listen vises i rækker i stedet for kolonner)
+$ ls -R	  (listes rekursivt - man lister altså også indholdet af underkataloger)
+$ ls -F   (Tilføjer tegn alt efter filtype ​​* / => @ |)
+
+
+#################
+ø3.2
+#################
+
+$ cat dyr
+$ cat gurues
+$ cat dyr gurues
+$ cat gurues dyr
+$ cat gurues dyr > fil4
+$ ls -l gurues dyr fil4
+$ cat fil4
+
+$ ls dyr gurues
+$ ls gurues dyr
+
+$ echo dyr gurues   #skriver bare teksten ud
+$ echo gurues dyr   #skriver bare teksten ud  så derfor er ordene også i samme rækkefølge
+
+$ cat
+…indtast dernæst et tilfældigt ord og tryk på RETUR. Gentag dette nogle gange og tryk tilsidst ^c (Ctrl+c).
+
+
+Øvelse 2. b
+Iagttag forskellene mellem:
+
+$ cat dyr1
+
+$ cat -v dyrcat1  (specialtegn for ikke ascii tegn undtaget LF og TAB)
+
+$ cat -vt dyr1  (specialtegn for ikke ascii tegn INKLUSIV LF og TAB)
+
+cal
+#################
+lf3.2
+#################
+
+Øvelse 3.2. a
+$ cat dyr                 (viser indholdet af filen dyr)
+$ cat gurues              (viser indholdet af filen gurues)
+$ cat dyr gurues          (viser indholdet af filen dyr og gurues)
+$ cat gurues dyr          (viser indholdet af filen gurues og dyr)
+$ cat gurues dyr > fil4   (læser indholdet af gurues og dyr ind i fil4)
+$ ls -l gurues dyr fil4   (lister de 3 filer)
+$ cat fil4                (viser indholdet af filen fil4)
+
+$ ls dyr gurues
+$ ls gurues dyr           (Læg mærke rækkefølgen ikke ændres)
+
+$ echo dyr gurues          	
+$ echo gurues dyr        (echo udskriver den efterfølgende tekst,                   	det er her et tilfælde det er filnavne)
+
+$ cat                   (Udfører cat kommandoen med det input du    	taster efter hver gang du trykker på 	RETUR 	- afslut med CTRL + C )
+Øvelse 3.2. b
+(Iagttag forskellene mellem:)
+$ cat dyr1
+$ cat -v dyr1      (viser ”ikke standard” tegn med ^ og M- notation)
+$ cat -vt dyr1     (som ovenfor blot med notationer fo linieskift og   	  tabluring )
+
+
+
+#################
+ø3.3
+#################
+
+Øvelse 3.3. a
+Hvilken ugedag blev du født? Brug cal-kommandoen til at vise en kalender over din fødselsmåned. Du skal give cal 2 parametre: månedsnummer og årstal - fx: 
+
+$ cal 2 1947 
+(februar  1947)
+
+Afprøv også at indtaste disse eksempler:
+
+$ cal
+
+$ cal 2
+
+$ cal 1947
+
+$ cal 9 1752 
+(en lidt speciel måned!)
+
+$ cal 5000
+
+$ cal 0
+
+#################
+#3.16
+#################
+
+#Få svar på hvad en kommando gør med type
+
+ type ls  	
+
+#hvor befinder en kommando/et program sig?
+
+ whereis ls  		#(ls: /bin/ls )
+
+# hvad er det for et program?
+
+ whatis ls  		#( se svar på ls og afprøv LS )
+
+
+#################
+#3.19
+#################
+
+#LAD BRUGERNE SELV AFPRØVE FØLGENDE KOMMANDOER:
+
+  ls -l | more
+  ps -ef | less
+
+
+
+
+#################
+ø3.4
+#################
+
+
+Øvelse 4. a
+Gentag 5 af dine tidligere kommandoer.
+Vælg selv hvilke og i hvilken rækkefølge du vil gøre det i.
+
+
+Øvelse 3. 4. b
+Brug type-kommandoen til at udtale sig om nogen af de kommandoer, som du har prøvet.
+
+
+Øvelse 3.4. c
+
+Hvor findes date-kommandoen (dvs. filen/programmet)?   (whereis date)
+Hvad laver date-kommandoen? (whatis date)
+
+Hvad er date-kommandoen?    (type date)
+
+
+
+
+
+#****************************************************************************************#
+
+#################
+#4.5
+#################
+
+ man ls      	#(Manual for ls kommandoen)
+ man man   	#(Manual for man kommandoen)
+ man intro 	#(Manual for introduktion af bruger-kommandoer)
+
+/***
+	retur - bladrer 1 linie frem
+	f   	(og mellemrum)bladrer en skærmvisning frem
+	b  	bladrer en skærmvisning baglæns
+	/	søgeord - søger efter en given tekst (n for næste)
+	q 	afslutter
+
+****/
+
+#################
+#4.6
+#################
+
+ man -f ls    
+ whatis ls
+
+ man -k search    
+ apropos search
+
+
+#################
+ø4.1
+#################
+Øvelse 1. a
+Find nogle IKKE gyldige flag til kommandoen ls
+
+Øvelse 1. b
+Hvordan påvirker flaget -F kommandoen ls ?
+
+Hvad får man med: ls -lt
+
+Øvelse 1. c
+Hvad bruges kommandoen find til?
+
+#################
+lf4.1
+#################
+
+Øvelse 4.1. a
+Find nogle IKKE gyldige flag til kommandoen ls  (brug man kommendoen)
+ $ ls -e
+ $ ls -j
+ $ ls -y
+
+Øvelse 4.1. b
+	Hvordan påvirker flaget -F kommandoen ls ?  ( brug man kommendoen)
+
+	Tilføjer tegn alt efter filtype ​​* / => @ | 
+
+Hvad får man med: ls -lt  (brug man kommendoen)
+	
+	Udskriver lang liste og sorterer efter seneste ændringsdato 	(nyeste først)
+ 
+	
+Øvelse 4.1. c
+	Hvad bruges kommandoen find til?  (brug man kommendoen)
+
+	Grundlæggende finde kommandoer for at finde filer med navne 
+	(med flaget -name)
+
+	eller efter ejer (med flaget -user)
+
+	eller efter type (med laget -type) o.s.v.
+
+	Eks. På andre flag: -mtime -size
+
+
+#################
+ø4.2
+#################
+
+Øvelse 4.2. a
+Find nogle korte forklaringer til følgende kommandoer:
+cat
+find
+ls
+nl
+
+#################
+lf4.2
+#################
+
+ $ man -f cat
+ eller
+ $ whatis cat
+
+#################
+ø4.3
+#################
+Øvelse 3. a
+Find de kommandoer, der har følgende nøgleord i deres korte beskrivelser:
+copy
+mail
+search
+
+#################
+lf4.3
+#################
+
+	$ apropos copy 
+ eller
+	$ man -k copy
+
+
+#################
+#4.8
+#################
+
+  help cd        
+  info --help
+
+
+#################
+ø4.4
+#################
+Springes bare over:
+Øvelse 4. a
+Afprøv disse tre hjælpekommandoer:
+man
+man -f
+xman &
+
+…til at finde information om:
+vi
+ex
+ed
+emacs
+
+#################
+lf4.4
+#################
+
+afprøv det og læg mærke vinduet der dukker op med xman...
+
+
+#****************************************************************************************#
+
+
+#################
+#5.4
+#################
+
+$ vi 		#(start af ny tom unavngivet fil)
+  $ vi nyfil 	#(start af ny tom fil med navnet ”nyfil”)
+  $ vi glfil 	#(åben og redigér gammel fil: ”glfil”)
+
+#################
+ø5.1
+LF5.1
+#################
+
+Øvelse 5.1. a
+Åbn dokumentet lark med kommandoen:
+vi lark
+
+Flyt cursoren:
+12 tegn ind på linjen: (12l)
+ned til 2. vers: }  (2 ALTGR+0  ) 
+tilbage til starten af linjen: (0)
+til sidste linje i dokumentet:  (G)
+op til næstsidste vers:  2  $${  (2 ALTGR+7)
+til linjeslut: ($ = ALTGR4)
+3 ord baglæns: (3b)
+til linje 4: (4G)
+4 ord frem: (4w)
+
+Afslut vi uden at arkivere - tast følgende:
+”Esc”-tasten og derefter
+:q!
+
+
+Øvelse 5.1. b
+Åbn en anden fil med vi.
+Flyt ”på egen hånd” cursoren rundt i dokumentet.
+
+Afslut vi uden at arkivere - tast følgende:
+”Esc”-tasten og derefter
+:q!
+
+Øvelse 5.1. c
+Åbn filen txt
+Hvad sker, hvis du taster:
+34w:  (flytter cursor 34 ord fremad)
+3j: (flyter cursor 3 linjer ned)
+3 - efterfulgt af retur-tasten: (flyter cursor til starten af linjen 3 linjer nede)  
+5k: (flytter cursor 5 linjer op)
+100k hvad sker? (flytter cursor 100 linjer op eller start af dokument)
+6k	 (6 linjer op)
+
+Afslut vi uden at arkivere - tast følgende:
+”Esc”-tasten og derefter
+:q!
+
+#################
+ø5.2
+#################
+
+Øvelse 5.2. a
+Åbn påny dokumentet lark med kommandoen:
+vi lark
+Redigér, så der kun er én tom linje mellem versene. ( } 2dd)
+
+Afslut vi uden at arkivere - tast følgende:
+”Esc”-tasten
+:q!
+
+
+Øvelse 5.2. b
+Åbn påny dokumentet lark
+
+Gå til linje 29 (med de 3 punktummer i starten af linjen). (29G)
+
+Fjern de 3 punktummer: (3x)
+”Esc”-tasten
+:q!
+
+#################
+ø5.3
+#################
+
+Øvelse 3. a
+Åbn filen saturday
+
+Kopier linje 1 og indsæt den igen efter linje 3  (yy 3 p)
+
+Fortryd indsætningen (u)
+
+
+Øvelse 3. b
+I hvert vers i filen saturday er første verslinje blevet delt i to dele.
+Nu skal du forene de to dele: (J (linje1)
+
+Øvelse 3. c
+I sangen ”Det var en lørdag aften” starter hvert vers med gentagelse af de to første linjer.
+Sørg for at de pågældende linjer også bliver skrevet to gange i filen saturday: (2yy P)
+
+#################
+ø5.4
+#################
+Øvelse 5.4. a
+Åbn filen saturday
+På nederste linje mangler lidt oplysninger. Ret teksten, så den ser således ud:
+
+melodi: folkemelodi
+tekst:  S. Grundtvig
+(i afslut med ESC)
+
+I filen lark skal du tilføje oplysningslinjer om henholdsvis melodi og tekst:
+Carl Nielsen (1924)
+Harald Bergstedt (1921)
+
+
+#################
+#5.17
+#################
+
+
+:s/søgetekst/erstatningstekst/	  	Søger og erstatter første
+									forekomst af ordet “søgetekst” i 
+									den aktuelle linje
+
+:s/søgetekst/nytekst/g				Søger og erstatter alle forekomster af det søgte ord i 
+									den aktuelle linje
+:
+%s/søgetekst/erstatningstekst/g		Søger og erstatter alle forekomster
+									af det søgte ord
+
+:%s/[175]/8/g			Erstatter alle forekomster af 1, 7 og 5
+						med tallet 8
+
+
+
+
+#################
+ø5.5
+#################
+Øvelse 5.5. a
+I første linje af filen saturday er der anvendt et ettal i stedet for et lille l.
+Ret det med r-kommandoen.  (3wrl)
+
+
+Øvelse 5.5. b
+Ret tilsvarende udråbstegnet til punktum ( 2w r.)
+
+
+Øvelse 5.5. c
+Ret alle andre steder kolon til mellemrum. (:%s/:/ /g)
+
+
+
+#################
+ø5.6
+#################
+
+Øvelse 5.6. a
+Åbn filen lark
+Søg efter tekststrengen ”unge”.
+Fortsæt søgningen og tæl op hvor mange forekomster der er.
+
+:/unge
+RETURN
+n  (= :næste forekomst)
+
+
+
+
+
+#################
+ø5.7
+#################
+
+Øvelse 5.7. a
+I filen lark er der skrevet ”svale” i stedet for ”lærke”.
+
+Nu skal du fra bundlinjen med substitute-kommandoen rette alle steder.( :%s/svale/lærke/g )
+
+(Udtaget af øvelserne:)
+Øvelse 7. b
+Åbn filen txt  og ret ordet ”Amadeus” på linje 123 til ”Mozart” med substitute-kommandoen. (123G :s/Amadeus/Mozart)
+
+
+Øvelse 5.7. b
+Åbn filen kina
+Ret alle forekomster af bogstavet e til bogstavet i
+
+
+Øvelse 5.7. c
+Åbn filen kina
+Ret alle forekomster af vokaler (aeiouyæøå) til bogstavet i:
+(:%s/[aeiouyæøå]/i/g)
+
+#################
+ø5.8
+#################
+
+Øvelse 8. a
+Åbn et nyt tomt dokument.
+Indtast følgende 4 linjer:
+
+Det er ikke så svært
+at bruge VI-editoren.
+Man kan komme langt
+med det vi har lært.
+
+Arkivér dokumentet under navnet minfil
+
+Øvelse 8. b
+Tilføj forneden denne linje:
+
+VI er standard i såvel Linux som UNIX
+
+Arkiver seneste ændringer.
+
+Øvelse 8. c
+Tilføj forneden denne linje:
+
+Emacs er bedre.
+
+Afslut uden af arkivere.
+Cat filen: minfil
+
+Øvelse 8. d
+Åbn filen påny i vi og tilføj forneden denne linje:
+
+Kender vi VI, kan vi 
+altid redigere tekstfiler.
+
+Arkivér og afslut med ZZ
+
+#################
+ø5.9
+#################
+
+Øvelse 9. a
+Åbn filen cats
+
+Indsæt filen dogs før linje 1 og efter linje 6. (:0r dogs)
+
+Arkivér som:  hundogkat (:w hundogkat) eller (:w! hundogkat = overskriver gammel fil)
+
+#################
+ø5.10
+#################
+
+#################
+#5.20
+#################
+
+  :map <F2> :r lark <CR>
+  #eller
+  :map! £ Denne tekst vil jeg anvende mange gange 
+
+  :unmap 
+  :umap! £
+
+#################
+#5.21
+#################
+
+vi .vimrc 	#(Åbner opretter fil til vores makroer)
+
+  map <F2> i#!/bin/bash <ESC>
+  map <F3> :r!echo "\# This script is made by: $USER" ;date "+ on \%A \%d. \%B \%Y " <ESC>kJo
+  map! £ ###########################<CR>#<CR># Comment: <CR>#<CR>###########################
+
+ #eksempel på html-skabelon:
+  map <F6> i<html><CR><TAB><head><CR><TAB><TAB><title> </title><CR><TAB></head><CR><TAB><body><CR><CR><TAB></body><CR></html><ESC>k3G3whi
+
+
+
+
+
+
+#****************************************************************************************#
+
+
+#################
+#6.4
+#################
+
+ pwd 		#(print working directory)
+ cd dir	# (skifter til under-kataloget ”dir”)
+ cd ..		# (skifter til forældre-kataloget)
+
+#################
+#6.5
+#################
+
+ ls -l 	#(Viser oplysninger om hver fil)
+ ls dir	#(Viser indhold under-kataloget ”dir”)
+ ls d*		#(Indhold under-kataloger der starter med d)
+ ls -ld dir	#(Viser oplysninger om kataloget ”dir”)
+ ls -lr	#(Sorterer i faldende alfabetisk rækkefølge)
+ ls -lt	#(Sorterer efter seneste ændringstidspunkt)
+
+#################
+#6.11
+#################
+ cd dir		# (skifter til under-kataloget ”dir”)
+ cd ..		# (skifter til forældre-kataloget)
+ cd /home/bruger2/  	# (skifter til bruger2’s hjemmekatalog)
+ cd ../bruger2/  	# (skifter ved hjælp af relativ sti )
+ $ cd  			# (skifter til eget hjemmekatalog)
+ $ cd ~			# (skifter til eget hjemmekatalog)  
+ $ cd ~bruger2	 	# (til bruger2’s hjemmekatalog med ’tilte’)
+
+ mkdir tempdir		# (Opretter ”tempdir” hvor du står)
+ mkdir /home/bruger/tempdir # (Opretter ”tempdir” i /home/bruger/)
+
+#################
+#6.12
+#################
+
+ rmdir tempdir		# (Sletter ”tempdir” hvor du står)
+ rmdir /home/bruger/tempdir # (Sletter ”tempdir” i /home/bruger/)
+ 
+ #OBS! Det er kun muligt at slette tomme kataloger med rmdir
+
+ rm -r tempdir		# Sletter ”tempdir” og ALT indhold i
+				   kataloget)
+ rm -r ../bruger1/tempdir  	#(Sletter ”tempdir” Bemærk relativ sti)
+
+
+#################
+#6.13
+#################
+
+ >a		# (Opretter filen ”a”)
+ >b>c>d 	# (Opretter filerne ”b”, ”c” og ”e”)
+ touch e	# (Opretter filen ”e”)
+ touch f g h # (Opretter filerne ”f”, ”g” og ”h”)
+
+ Ole Hansen > navnefil 	     # (Opretter filen ”navnefil” medteksten ”Ole Hansen” i første linje)
+ echo Mosevej 10 >> navnefil # (Tilføjer linje til “navnefil”)
+ echo Helsingør >> navnefil  # (Tilføjer linje til “navnefil”)
+
+#################
+#6.14
+#################
+
+
+ cat bibel		# (Filen ”bibel” scroller ind ober skærmen
+			   CTRL+c for at afbryde)
+
+ more bibel 		# (Filen ”bibel” bliver vist så man kan
+ 			   Bladre med “mellemrums-tangenten” en side
+ 			   ad gangen) ”return” en linje frem.
+			   UNIX kommando - CTRL+c for at afbryde)
+
+ less bibel 		# (Filen ”bibel” bliver vist så man kan
+ 			   Bladre med “mellemrums-tangenten” en side
+ 			   ad gangen) ”return” en linje frem.
+			   LINUX kommando -  q for at afbryde)
+
+
+
+#################
+ø6.1
+#################
+
+Undersøg hvor du står i filtræet efter login, og se hvilke filer der ligger her.
+
+
+Øvelse 1. b
+Gå til rodkataloget og list alle de filer og kataloger der ligger her (ikke underkatalogernes indhold).
+
+Gå herefter til et eller flere af følgende kataloger og list indholdet:
+/usr
+/bin
+/etc
+/dev
+/home
+
+
+Øvelse 1. c
+Find ud af hvor mange bytes filen /etc/passwd indeholder.
+
+…og hvor mange bytes indeholder filen bibel i dit hjemmekatalog?
+
+Øvelse 1. d
+Gå til kataloget /tmp
+Check at det er her du står.
+ 
+Gå herefter til kataloget tmp i dit hjemmekatalog.
+Check at det er her du står.
+
+Skift mellem katalogerne /tmp og tmp i dit hjemmekatalog.
+
+
+Øvelse 1. e
+Gå til hjemmekataloget
+
+Opret et katalog med navnet sub
+Gå til kataloget dir i dit hjemmekatalog.
+
+Skift mellem katalogerne sub og dir Brug både relativ og absolut sti-angivelse.
+
+Øvelse 1. f
+Eksekver filen g i dit hjemmekatalog.
+
+Gå til dit sub-katalog og eksekver derefter filen g en gang til.
+
+Gå til /tmp-kataloget og eksekver filen g endnu en gang.
+
+
+Øvelse 1. g
+Opret i kataloget sub et par tomme filer (giv dem fx. navnene a og b).
+Slet på én gang filerne a og b samt kataloget sub
+
+#################
+lf6.1
+#################
+
+Opgave 1. a
+pwd
+ls
+
+
+Øvelse 1. b
+cd /
+ls -a
+
+cd /usr ; ls
+cd /bin ; ls
+cd /etc ; ls
+cd /dev ; ls
+cd /home ; ls
+
+
+Øvelse 1. c
+ls -l /etc/passwd
+Svaret står i tallet foran månedsnavnet i datoen.
+
+cd ; ls -l  bibel
+Svaret står i tallet foran månedsnavnet i datoen.
+
+
+Øvelse 1. d
+cd  /tmp
+pwd
+ 
+cd
+cd ./tmp
+pwd
+
+cd /tmp
+cd ~/tmp
+pwd
+cd /tmp
+pwd
+cd ~/tmp
+pwd
+cd /tmp
+cd
+pwd
+cd tmp
+pwd
+cd
+
+Øvelse 1. e
+cd
+
+mkdir sub
+cd dir
+cd ../sub
+cd ../dir
+
+cd ~/sub
+cd ~/dir
+
+
+Øvelse 1. f
+cd
+./g
+
+cd sub
+../g
+
+cd /tmp
+~/g
+
+cd
+../bruger1/g
+
+
+Øvelse 1. g
+cd ~/sub
+>a >b
+ls -l
+cd
+rm -r sub
+
+#****************************************************************************************#
+
+
+#################
+#7.4
+#################
+OBS! GENNEMGÅS SENERE
+
+ 	cat 		#(Vis indholdet af en eller flere filer)
+	more/less 	#(Vis indhold sidevis)
+	head		#(Vis n første linjer)
+	tail		#(Vis n sidste linjer)
+    cp 		#(Kopiér fil)
+	mv 		#(Flyt/omdøb fil)
+	ln		#(Link til fil)
+	rm		#(Slet fil)
+
+#################
+#7.5
+#################
+OBS! GENNEMGÅS SENERE
+
+ grep 		#(Find linjer efter søgekriterie)
+ find 	 	#(Find filer efter søgekriterie)
+
+ sort 		#(Sortér linjer)
+
+ uniq 		#(Håndterer dubletter af linjer)
+
+#################
+#7.6
+#################
+OBS! GENNEMGÅS SENERE
+
+ cmp  		#(Sammenlign 2 binære filer)
+ diff 		#(Sammenlign 2 tekstfiler)
+ cksum		#(Angiv checksum af fil)
+ md5sum	    #(Angiv md5 checksum af fil)
+
+ file 		#(Angiv type af fil)
+ strings 	#(Vis ASCIItekststrenge i data -ex. wordfil)
+ wc		#(Vis antal linjer, ord og tegn i 
+
+#################
+#7.8
+#################
+
+STDIN (0)
+< fil  		#(læser input fra fil)
+cmd1 | cmd2 #(læser output fra kommando 1 ind i kommando 2)
+<< slut #(læser indhold ind til afslutningskommandoen(slut) skrives):
+   eksempel:
+
+$ wc -l << slut
+> a
+> b
+> c
+> slut
+
+
+STDOUT (1)
+> fil 	#(Oprette er tom fil -sletter indhold i filen fil hvis den eksisterer)
+>> fil  #(tilføjer output i slutningen af filen)
+		eksempel:
+		cat fil1 >> fil2  #(indhold af fil1 placeres islutningen af indholdet for fil2
+
+>/dev/null/  #(standard output slettes / udskrives ikke til skærm)
+>&2 		 #(Standardoutput sendes til standard error)
+
+STDERR (2)
+2> fil  		#(standarderror sendes til fil)
+2>>fil			#(standarderroer tilføjes til filen fil (kan bruges som error-log))
+2>/dev/null		#(fejlbeskeder udskrives ikke)
+2>&1			#(fejlbeskeder sendes til standardoutput (samme sted som er defineret for STDOUT))
+
+
+#################
+#7.9
+#################
+
+
+ cat fil1 fil2		#(fil1 og fil2 udskrives efter hinanden i stdout)
+
+ cat findesikke rim 	 #(fejlmeddelelse stderr og rim skrives efter hinanden i stdout)
+
+ cat -n fil1 fil2 #(udskriver linjenumre)
+
+
+#################
+#7.10
+#################
+
+ more /etc/passwd  names		 #(passwd og names udskrives efter hinanden en ”side” ad gangen f=forward q=quit)
+ 
+ls -l | more 	#(Læg mærke til | ”pipe” tegnet som sender output videre til ”more”)
+
+less /etc/passwd  names		#(passwd og names udskrives efter hinanden en ”side” ad gangen)
+ 
+ls -l | less 	    #(Læg mærke til | ”pipe” tegnet som sender output videre til ”less” f=forward   b=backward  )
+
+#################
+#7.11
+#################
+
+  head bibel 		#(Her vises de 10 første linjer af ”bibel”)
+  head -23 bibel 	#(Her vises de 23 første linjer af ”bibel”) 
+  ls -l | head 		#(Her vises de 10 første linjer af en liste)
+
+ tail bibel 		#(Her vises de 10 sidste linjer af ”bibel”)
+ tail -23 bibel 	#(Her vises de 23 sidste linjer af ”bibel”) 
+ ls -l | tail +15	#(Her vises til og fra linje 15 af en liste)
+ tac fil1  			#(Viser linjer i omvendt rækkefølge (UNIX tail -r)
+
+ *) for at tjekke hvem der har forsøgt at logge på systemet:
+tail -f /var/log/auth.log   # monitorerer loggen uden at afslutte - åbn et nyt vindue og forsøg at bruge sudo uden authentication
+								- se hvorledes loggen ændrer sig
+
+#################
+ø7.1
+#################
+
+Øvelse 1. a
+Brug kommandoen cat til at:
+Se indholdet af fil1
+
+Se indholdet af fil1, fil2 og fil3 på én gang
+
+Se indholdet af filen lark
+
+Øvelse 1. b
+Brug more eller less til at se indholdet af filen bibel
+
+Øvelse 1. c
+Vis de første 4 linjer af names
+
+Vis de sidste 4 linjer af names
+
+Vis de sidste linjer af names fra og med linje nummer 3
+
+Øvelse 1. d
+Vis filen lark med linjenumre.
+
+Vis filen names med linjenumre.
+
+Vis filen linefeed med linjenumre.
+
+
+#################
+lf7.1
+#################
+LØSNINGSFORSLAG
+#Øvelse 1. a
+cat fil1 
+cat fil1 fil2 fil3 
+cat lark 
+
+#Øvelse 1. b
+less bibel 
+
+#Øvelse 1. c
+head -4 names 
+tail -4 names 
+tail +3 names 
+
+#Øvelse 1. d
+nl -ba lark  (eller cat -n lark)
+cat -n names 
+cat -n linefeed 
+
+
+#################
+#7.12
+#################
+
+ls -i
+ls -li
+
+#################
+#7.13
+#################
+
+ cp num numkopi  			#(Kopien får et andet navn end originale)
+ cp num /tmp/num 			#(Kopien får et andet navn og placeres i /tmp)
+ cp num /tmp     			#(Kopien samme navn og placeres i /tmp)
+ cp num price size /tmp  		#(3 filer kopieres og placeres i /tmp)
+
+#################
+#7.14
+#################
+
+ cp -r brevdir brevdir_kopi  #(kataloget oprettes samtidig)
+
+#################
+#7.15
+#################
+
+ mv num nynum      	#(Filen num omdøbes til nynum)
+ mv num /tmp/nynum 	#(Filen num flyttes /tmp og omdøbes til nynum)
+ mv num /tmp     	#(Filen num flyttes til /tmp uden at skifte navn)
+ mv color price size /tmp     #(3 filer flyttes samtidig til /tmp)
+
+#################
+#7.16
+#################
+
+ ls -li dogs        #(Læg mærke til filens(inode)/link:)
+   	# 2102656 -rw-r--r-- 1 bruger bruger 152 Oct 31 11:27 dogs
+
+ ln dogs dogs_hot   #(dogs gives et extra link)
+
+ ls -oli dogs dogs_hot #(Læg mærke til filens(inode)/link:)
+	# 2102656 -rw-r--r-- 2 bruger 152 Oct 31 11:27 dogs
+	# 2102656 -rw-r--r-- 2 bruger 152 Oct 31 11:27 dogs_hot
+
+#################
+#7.17
+#################
+
+ ln dogs dir/hund   #(dogs gives et extra link i kataloget dir)
+
+ ls -li dogs dogs_hot #(Læg mærke til filens(inode)/link:)
+ 	 2102656 -rw-r--r-- 3 bruger 152 Oct 31 11:27 dir/hund
+ 	 2102656 -rw-r--r-- 3 bruger 152 Oct 31 11:27 dogs
+
+ ln dogs dir       #(FEJLER - dir er et katalog og opfattes derfor
+			  ikke som et nyt filnavn)
+
+ ls -li dogs dir/{dogs,hund} 
+ 	 2102656 -rw-r--r-- 4 bruger 152 Oct 31 11:27 dir/dogs
+	 2102656 -rw-r--r-- 4 bruger 152 Oct 31 11:27 dir/hund
+ 	 2102656 -rw-r--r-- 4 bruger 152 Oct 31 11:27 dogs
+
+
+#################
+#7.19
+#################
+
+ ln -s cats symcats 
+	 #(Opretter et symbolsk link, symcats, til filen cats)
+
+ ls -li cats symcats 
+	#(Læg mærke til de 2 filer får forskellig inode m.m.):
+	2102629 -rw-r--r-- 1 bruger bruger 121 Oct 31 14:26 cats
+	2097935 lrwxrwxrwx 1 bruger bruger   4 Nov 14 14:07 symcats -> cats
+
+ cd dir ; ln -s ../cats symcats2  #(Skifter til kataloget dir og opretter et symbolsk link symcats2 til filen cats i forældre-kataloget)
+
+#################
+#7.20
+#################
+
+ rm brev           #(Sletter link i arbejdskataloget)
+ rm /etc/passwd    #(Sletter link i /etc - hvis man må!)
+ rm -i hund        #(-i = Der skal kvitteres for sletning)
+ rm -f size        #(Der kommer ingen advarsel)
+ rm -r dir         #(PAS PÅ - dir slettes med ALT indhold)
+
+
+#################
+ø7.2
+#################
+Øvelse 2. c
+Kopier filen lark i hjemmekata­loget til links-kataloget.
+Sammenlign i-noderne og størrelsen af de tre filer i links.
+
+Vis de første 4 linjer i lark.ln
+Vis de første 4 linjer i lark.sy
+
+Omdøb filen lark i hjemmekata­loget til navnet lark0.
+Vis de første 4 linjer i lark.ln
+Vis de første 4 linjer i lark.sy
+
+Find en forklaring på hvad der er sket.
+
+Slet filen lark0 i hjemmekata­loget 
+Vis de første 4 linjer i lark.ln
+Vis de første 4 linjer i lark.sy
+
+Find en forklaring på hvad der er sket.
+
+Kopier filen saturday i hjemmekataloget og kald kopien lark 
+Vis de første 4 linjer i lark.ln
+Vis de første 4 linjer i lark.sy
+
+Find en forklaring på hvad der er sket.
+
+#################
+lf7.2
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 2. a
+mkdir links 
+ln lark links/lark.ln 
+ls -li links/lark.ln lark 
+
+#Øvelse 2. b 
+ln -s ../lark links/lark.sy 
+ls -li links/lark.sy lark 
+
+#Øvelse 2.c
+cp lark links 
+ls -li links 
+
+head -4 lark.ln lark.sy 
+
+mv lark lark0 
+head -4 lark.ln lark.sy 
+
+rm lark0 
+head -4 lark.ln lark.sy 
+
+cp saturday lark 
+head -4 lark.ln lark.sy 
+
+#################
+#7.21
+#################
+
+ grep ALFA fil1 	#(Søger efter tekststrengen ALFA i fil1)
+					#(som standard er søgning case-sensetiv)
+ grep herren bibel
+ grep HERREN bibel
+
+#################
+#7.22
+#################
+
+ grep -c HERREN * #(Antal forekomster af HERREN i pwd)
+ grep -n ALFA alfa    #(viser linjenumre for de fundne linjer)
+ grep -i alfa alfa  #(Ignorerer store/små bogstaver)
+
+Eksempel på Regular-expression der søger efter emailadresser i filer:
+grep -E -o "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b" *
+
+eller URL (også i under kataloger):
+grep -EoR '(http|https)://[^/"]+' * 2>/dev/null
+ 
+#################
+ø7.3
+#################
+
+#Øvelse 3. a
+Udskriv fra filen: 
+bibel
+linjer, som indeholder tekst­strengen: 
+æbletræ
+
+#Øvelse 3. b
+Udskriv fra filen:
+bibel
+antallet af de linjer, som ikke indeholder tekststrengen: 
+æbletræ
+
+#Øvelse 3. c
+Udskriv fra filerne:
+lark1 lark2 … osv.
+de linjer (med linjenummer), som indeholder tekststrengen: 
+lærke
+
+#Øvelse 3. d
+Udskriv filnavne på filer som indeholder tekststrengen: 
+lærke
+
+#Øvelse 3. e
+Udskriv for hver fil i hjemmekataloget antallet af linjer som indeholder tekststrengen: 
+lærke
+
+#Øvelse 3. f
+Udskriv de linjer i fil1 som indeholder #-tegn.
+
+#################
+lf7.3
+#################
+LØSNINGSFORSLAG
+#Øvelse 3.a
+grep æbletræbibel 
+
+#Øvelse 3.b 
+grep -c æbletræ bibel 
+
+#Øvelse 3.c
+grep -n lærke lark*
+eller
+grep -n lærke lark[1-9] lark[A-Z]
+ 
+
+#Øvelse 3.d
+grep -l lærke * 
+grep -l lærke * 2>/dev/null 
+
+
+#Øvelse 3.e
+grep -c lærke * 
+
+eller 
+grep -c lærke * | grep -v ':0' 
+eller 
+grep -c lærke * | grep -v '^:0' 
+
+#Øvelse 3.f
+grep \# fil1 
+
+
+#################
+#7.24
+#################
+
+ find -name brev *     		#Søger (og viser) filer med navnet brev
+ find /home -name 'brev*'   	#(Søg efter filer i /home, som har "brev" i starten af navnet)
+
+#################
+#7.25
+#################
+
+  find .. -name 'brev*'   	#(Søger efter filer i forældrekataloget, som har "brev" i starten af navnet)
+
+  find / -user bruger	     #(Søger efter ALLE filer ejes af bruger)
+
+  find brevdir -mtime -1  	#(Søger efter filer i brevdir der er Modificeret inden for det sidste døgn) 
+  find ./ -name 'fil[1-3]' -exec cat {} \; #(Søger efter fil1, fil2 og fil3, og viser indholdet
+		   #Bemærk det efterfølgende -exec flag og cat{} \;)
+
+  find brevdir -name brev -ok rm {} \;	    #(Søger og sletter alle filer der hedder brev
+		   #Bemærk det efterfølgende -ok flag og rm{} \;)
+
+
+#################
+#7.26
+#################
+
+locate 'bibel'   #(Søger efter filer i hvor ordet bibel indgår
+			i filnavnet ~ ’*bibel*’)
+locate -b '\bibel'   #(Søger efter filer hvor navnet eksakt matcher 
+				ordet bibel)
+
+* Vis hvordan en nyoprettet fil ikke kan findes med locate kommandoen uden man med rootrettigheder har kørt kommanbdoen: updatedb
+
+> test-ny-fil
+locate -b '\test-ny-fil'
+(tomt svar)
+find . -name 'test-ny-fil'
+(filen eksisterer)
+
+su bruger
+sudo updatedb
+
+test igen med
+locate -b '\test-ny-fil'
+
+#################
+ø7.4
+#################
+
+#Øvelse 4. a
+Find alle filer med navnet txt i /home og underliggende kataloger.
+
+#Øvelse 4. b
+Find alle filer der ikke er ejet af din brugerkonto i dit hjemmekatalog.
+
+#Øvelse 4. c
+Find alle de filer i eller under dit hjemmekatalog og som har ".c" i slutningen af filnavnet.
+
+#Øvelse 4. d
+Vis indholdet af alle filer, hvis navn starter med fil
+
+#################
+lf7.4
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 4.a
+find /home -name txt
+
+#Øvelse 4.b
+find ~ ! -user bruger1 
+
+#Øvelse 4.c
+find ~ -name '*.c' 
+
+#Øvelse 4.d
+find ~ -name 'fil*' -exec cat {} \; 
+
+
+#################
+#7.28
+#################
+
+ cat gurues	#(cat=usorteret)
+	Bill   Joy      3       oct
+	James  Bond     007     mar
+	Ken    Thompson 2       sep
+	Linux  Thorvald 03      dec
+
+ sort -k2 gurues #(sorterer efter kolonne 2)
+	James  Bond     007     mar
+	Bill   Joy      3       oct
+	Ken    Thompson 2       sep
+	Linux  Thorvald 03      dec
+
+ sort -k3n gurues #(sorterer efter kolonne 3 numerisk)
+	Ken    Thompson 2       sep
+	Bill   Joy      3       oct
+	Linux  Thorvald 03      dec
+	James  Bond     007     mar
+
+ sort -k4rM gurues #(Efter kolonne 4 omvendt-månedsværdi)
+	Linux  Thorvald		03	dec
+	Bill   Joy			3	oct
+	Ken    Thompson		2	sep
+	James  Bond			007	mar
+
+#################
+#7.30
+#################
+
+ cat dublin  #(viser oprindelig fil med cat)
+				alfa
+				beta
+				alfa
+				gamma
+
+ sort -o dublin dublin #(filen sorteres og overskrives)
+ cat  dublin
+				alfa
+				alfa
+				beta
+				gamma
+
+ $ uniq dublin #(viser kun dublerede linjer een gang)
+				alfa
+				beta
+				gamma
+ 
+#################
+#7.31
+#################
+
+ cat uniqlin  #(viser indhold i filen)
+					alfa
+					alfa
+					beta
+					gamma
+ uniq -c uniqlin     # Alle linjer udskrives én gang.) 
+ 					 # Forrest på linjen skrives, hvor mange forekomster, der er af linjen.
+				  	2 alfa
+				  	1 beta
+				  	1 gamma
+ uniq -d uniqlin    #Udskriv linjer der er dubleret (men ikke dubletterne).
+					alfa
+
+#################
+#7.33
+#################
+$ cut -f3 gurues
+# udskriver 3die kolonne i filen gurues
+
+Eksempel på download af fil i linuxpromten:
+wget -O Downloads/adresser.csv 'http://dawa.aws.dk/adresser?format=csv&kommunekode=0155' 
+
+$ cut -d',' -f6,8,9,12,13 Downloads/adresser.csv
+# Udskriver kolonne nr. 6,8,9,12 og 13 fra en kommasepareret fil*
+
+EXTRA EXTRA :
+Nu vil vi gerne have matrikel nummeret med:
+cut -d ','  -f6,8,9,12,13,21,19,20 dragoer.csv | head -2
+Men hva så når der er et komma inde i en streng?
+cut -d ',' -f21,19,20 dragoer.csv | head -2
+
+AWK splitter felter op og kalder dem dem $1, $2, $3 osv
+
+#kommando der fortæller os antallet af kommaer i hver linie;
+awk -F "," ' { print NF-1 } ' dragoer.csv
+#er der forskelle:
+awk -F "," ' { print NF-1 } ' dragoer.csv |sort | uniq
+
+awk -F "," ' { print NF-1 } ' dragoer.csv |head -2
+
+Hvad så, vi vil gerne have ændret på rækkefølgen (matrikelnummer skal komme før ejerlavnavn)
+
+awk -F "\"*,\"*" '{print $6 "," $8  "," $9  "," $12 "," $13 "," $21  "," "\""$19 "," $20"\""}' dragoer.csv |head -2
+
+vi adr-matr.awkhead
+
+#############################
+BEGIN {
+		FS= ","
+		OFS= ","
+		#Indtæt ny linje med kolonne navne:
+        print "Vejnavn,Nr,Etage,Postnr,By,Matrnr,Ejerlav"
+	}
+	#for alle linjer undtagen den første (kolonne navnene):
+    NR > 1{
+		print $6,$8,$9,$12,$13,$21,$19,$20 
+	}
+	
+##############################
+
+
+
+#################
+ø7.5
+#################
+#Øvelse 5. a
+Sorter linjerne i filen dyr1 i faldende alfabetisk orden
+
+#Øvelse 5. b
+Sorter linjerne i filen dyr1 i numerisk orden efter 2. felt
+
+#Øvelse 5. c
+Sorter linjerne i filen dyr1 i numerisk orden efter 3. felt
+
+#Øvelse 5. d
+List filerne i hjemmekataloget og sorter linjerne efter filstørrelse.
+
+#Øvelse 5. e
+Sorter linjerne i filen dyr1 i numerisk orden efter 3. felt. 
+De linjer, hvor det 3. felt har samme værdi, skal indbyrdes sorteres numerisk efter 2. felt.
+
+#################
+lf7.5
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 5.a
+sort -r dyr1 
+
+#Øvelse 5.b
+sort -k2n dyr1 
+
+#Øvelse 5.c
+sort -k3n
+ 
+#Øvelse 5.d
+ls -l | sort -k5n 
+
+#Øvelse 5.e 
+sort -k3n -k2n dyr1 
+#################
+ø7.6
+#################
+
+#Øvelse 6. a
+Udskriv linjerne i filen dyr, således at alle dyr forekommer, men kun én gang hver.
+
+#Øvelse 6. b
+Udskriv KUN de linjer i filen dyr hvor dyret kun optræder én gang i filen (truely unikke dyr) 
+
+#Øvelse 6. c
+Udskriv linjerne i filen dyr med antallet af forekomster.
+
+#Øvelse 6. d
+Iagttag indholdet af filen oftest
+Denne fil er et shellscript.
+Kan du gennemskue, hvad det laver?
+Hvor kommer inddata fra?
+
+Eksekver filen med kommandoen:
+./oftest < dyr
+
+Eksekver filen med kommandoen:
+./oftest
+og indtast derefter:
+kat
+kat
+hund
+egern
+hund
+kat
+afslut med  <ctrl> d
+
+#################
+lf7.6
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 6.a 
+sort dyr | uniq 
+
+#Øvelse 6.b
+sort dyr | uniq -u 
+
+(hvis du vil eftertjekke med grep:)
+grep -n 'dronte\|får\|gepard\|isbjørn\|panter' dyr  # viser linjenumre hvor dyrerne forekommer
+
+
+#Øvelse 6.c
+sort dyr | uniq -c
+
+#Øvelse 7.6.d
+# Hvad laver filen 'oftest' ?
+cat oftest
+1) sort |
+2) uniq -c |
+3) sort -nr |
+4) head -15
+	1) sorterer linjer
+	2) tæller og viser antal forekomster af unikke linjer
+	3) sorterer i faldende orden efter antal forekomster
+	4) udskriver herefter de 15 mest forekomne linjer
+
+./oftest < dyr
+ 
+#################
+#7.32
+#################
+
+cmp dublin uniqlin    #(sammenlign dublin  og uniqlin)
+  						dublin uniqlin differ: byte 6, line 2
+
+
+
+
+#################
+#7.33
+#################
+
+diff dublin uniqlin    	#(viser koder med forskelle)
+sdiff dublin uniqlin   	#(filer vises ved siden af hinanden)
+sdiff -s dublin uniqlin    #(her vises kun linjer med forskelle)
+
+    # prøv med LarkL og Lark.us
+
+#################
+#7.34
+#################
+
+ cksum a.pdf b.pdf
+
+ md5sum a.pdf b.pdf
+
+ sha1sum a.pdf b.pdf  #(Her har vi manipuleret med filerne)
+
+evince a.pdf  #(se pdf)
+evince a.pdf  #(se pdf)
+ 
+#(Sikkerhedsstandarden for ovennævnte er for svag og kan manipuleres)
+# sikre standarder:
+ sha224sum a.pdf b.pdf
+ sha256sum a.pdf b.pdf
+
+#################
+#7.35
+#################
+ file bat brev dir 		#(Viser filtyper for de 3 filer)
+						bat:  ASCII text
+						brev: ISO-8859 text
+						dir:  directory
+
+ file ./* | grep text 	#(Viser alle filtyper af typen text)
+
+ cat /usr/bin/find		#(Viser binær fil)
+ strings /usr/bin/find      #(Viser kun ASCII tegn 
+				          fra den binære fil)
+
+
+
+#################
+#7.36
+#################
+
+ wc kina rim  #(viser antal linjer, ord og tegn i de to filer)
+ 	5  26 145 kina
+  	4   7  38 rim
+  	9  33 183 total
+ wc -l cats  #(viser antal linjer i filen cats) 
+ wc -w cats  #(viser antal ord i filen cats)
+ wc -c cats  #(viser antal tegn i filen cats) 
+
+#################
+ø7.7
+#################
+
+#Øvelse 7. a
+Sammenlign filerne lark1 og lark2 ved hjælp af kommandoerne
+cmp
+diff
+sdiff
+md5sum
+
+#Øvelse 7. b
+Undersøg om filerne sat1 og sat2 er ens.
+
+#Øvelse 7. c
+Hvilke af filerne, som matcher giraf*, er nøjagtig ens?
+
+#################
+lf7.7
+#################
+LØSNINGSFORSLAG
+#Øvelse 7.a
+cmp lark1 lark2
+diff lark1 lark2
+sdiff lark1 lark2
+md5sum lark1 lark2
+#Øvelse 7.b
+cmp sat1 sat2 
+
+#Øvelse 7.c
+md5sum giraf* | sort 
+
+#################
+ø7.8
+#################
+
+#Øvelse 8. a
+Undersøg filtypen på 
+/etc/passwd
+/usr/bin/passwd
+~/main.c
+
+#Øvelse 8. b
+Undersøg indholdet af tekstfilen kap7.txt
+
+#Øvelse 8. c
+Undersøg indholdet af Word-dokumentet kap7.doc
+
+#################
+lf7.8
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 8.a 
+file /etc/passwd /usr/bin/passwd ~/main.c 
+
+#Øvelse 8.b 
+file kap7.txt 
+cat kap7.txt 
+
+#Øvelse 8.c 
+file kap7.doc 
+strings kap7.doc 
+
+#################
+ø7.9
+#################
+
+#Øvelse 9. a
+Hvor mange linjer, ord og tegn er der i filen  bibel
+
+#Øvelse 9. b
+Hvor mange linjer, ord og tegn er der i filerne :
+kap7.doc
+kap7.txt
+
+#Øvelse 9. c
+Find ud af hvor mange forskellige dyr, der er repræsenteret i filen dyr
+
+#################
+lf7.9
+#################
+LØSNINGSFORSLAG
+
+#Øvelse 9.a 
+wc bibel 
+
+#Øvelse 9.b 
+strings kap7.doc | wc 
+wc kap7.txt 
+
+#Øvelse 9.c
+sort dyr | uniq | wc -l 
+
+#****************************************************************************************#
+
+# PRINTERE
+
+Vis status på alle tilgængelige printere:
+lpc status
+eller
+lpstat -t
+
+OBS!!!
+Hvis PDF printer ikke er installe
+
+ret:
+
+su bruger
+sudo apt-get install cups-pdf
+exit
+
+
+#################
+#8.6
+#################
+OBS VENT MED AT VISE EKSEMPLER TIL slide 8.9
+
+#################
+#8.9
+#################
+
+#MED BSD/CUPS (filter) -- her bliver vi nød til at pipe til print (_stdin_.pdf)
+lpr -P PDF < fil2
+eller
+cat fil2 | lpr -P PDF
+
+# (System V/CUPS)  (FILTER)
+lp -d PDF fil3
+
+lp -d PDF fil2
+
+#vis filerne:
+evince PDF/fil2.pdf
+evince PDF/_stdin_.pdf
+evince PDF/fil3.pdf
+
+#################
+ø7.8
+#################
+
+ø8.1
+Øvelse 8.1. a
+Vis status på alle tilgængelige printere.
+
+Øvelse 8.1. b
+Udskriv fil1 på PDF printeren
+
+Øvelse 8.1. c
+Vis liste af filer i PDF kataloget
+
+Øvelse 8.1. d
+Prøv med programmet evince at få vist den eller de filer su har liggende i PDF kataloget.
+
+#################
+lf8.1
+#################
+
+Øvelse 8.1. a
+lpc status
+eller
+lpstat -t
+
+Øvelse 8.1. b
+lp -d PDF fil1
+eller
+lpr -P PDF < fil2
+eller
+cat fil2 | lpr -P PDF
+
+
+Øvelse 8.1. c
+ls -l PDF
+
+Øvelse 8.1. d
+evince PDF/fil1.pdf
+eller
+evince _stdin_.pdf
+
+
+#****************************************************************************************#
+
+# PROCESSER
+
+################
+#9.8
+################
+ ps 			#(Se egne processer)
+ ps -ef 		#(Se alle systemets processer) 
+ ps -u peter 	#(Se hvilke processer brugeren peter kører
+
+################
+#9.11
+################
+
+ ps -ef |head -20	#(Se PID- og PPID-kolonnerne)
+ ps -axf 	#(Semigrafisk visning) 
+ pstree 	#(Viser semigrafisk træstruktur
+
+################
+#9.12
+################
+ ssh bruger[id]@192.168.10.106
+
+ ssh bruger9@192.168.10.106	 #(logger på instruktør maskinen i lokale 10)
+
+
+OBS: HUSK NICE og RENICE efter øvelserne!
+
+################
+ø9.1
+################
+
+#Øvelse 9.1. a
+Undersøg hvilke processer der kører på din egen terminal.
+
+#Øvelse 9.1. b
+Lav en liste over alle processer der kører på din maskine.
+
+#Øvelse 9.1. c
+Få kommandoen wc til at tælle hvor mange processer der kører på din maskine.
+
+#Øvelse 9.1. d
+Log ind på instruktør-maskinen før du går i gang med de følgende øvelser.
+(For at logge ind, skal du bruge kommandoen ssh, som - når du allerførste gang anvender ssh mod instruktørmaskinen - kræver en bekræftelse på, at maskinerne udveksler nøgler for at kryptere forbindelsen.)
+
+Husk: Log ud fra instruktørmaskinen efter afsluttet øvelse.
+
+#/**
+#$ ssh  dit_brugernavn@instructor
+#The authenticity of host 'instructor (192.168.1.100)' can't be established.
+#RSA key fingerprint is c8:65:37:56:a3:1e:61:c6:56:52:25:d1:03:c5:d4:5e.
+"Are you sure you want to continue connecting (yes/no)? 
+yes
+#Warning: Permanently added 'instructor' (RSA) to the list of known hosts.
+#bruger1@instructor's password: 
+password
+#**/
+
+
+#Øvelse 9.1. e
+Undersøg hvor mange processer der kører på instruktørmaskinen
+
+#Øvelse 9.1. f
+Lav en liste over de processer, der vedrører din shell.
+
+#Øvelse 9.1. g
+Lav en liste over netop de processer, der er knyttet til din sidemands brugerkonto.
+
+#Øvelse 9.1. h
+Lav en liste over netop de processer, der er knyttet til root.
+
+#Øvelse 9.1. i
+Hvad skal der til for at liste de processer, der er bash-shells?
+
+#Øvelse 9.1. j
+Hvordan får man listet processerne i sorteret orden efter dels PPID dels PID?
+
+#Øvelse 9.1. k
+Hvordan kan man med én kommando få vist procesoplysninger om flere udvalgte PID-numre eller flere forskellige bruger-ID’er?
+(Brug man-siden for ps).
+
+
+
+Husk: Log ud fra instruktørmaskinen efter afsluttet øvelse!
+
+
+################
+lf9.1
+################
+LØSNINGSFORSLAG
+
+#Øvelse 9.1. a
+ps
+
+#Øvelse 1. b
+ps -ef | more
+ps -ef | less
+
+#Øvelse 9.1. c
+ps -ef | wc -l
+Der er - pga. headeren - een proces mindre end tallet der vises.
+
+#Øvelse 9.1. d
+ssh dit_brugernavn@instructor
+
+ssh bruger1@192.168.10.106
+
+#Øvelse 9.1. e
+ps -ef | wc -l
+
+#Øvelse 1. f
+ps -ef | grep " $$ "
+
+#Øvelse 9.1. g
+ps -fu bruger1 
+
+#Øvelse 9.1. h
+ps -fu root
+
+#Øvelse 9.1. i
+ps -ef | grep bash | grep -v grep
+
+#Øvelse 9.1. j
+ps -ef | sort -k3n -k2n | less
+
+#Øvelse 9.1. k
+ps -fp ′124 456 1734′
+#eller:
+ps -fp 124,456,1734
+
+ps -fu ′bruger1 bruger3 bruger5′
+#eller:
+ps -fu bruger1,bruger3,bruger5
+
+
+
+
+################
+#9.14
+################
+
+vi stortjob.sh
+
+***************
+
+# stortjob.sh
+#!/bin/bash
+#job der gentager ls kommandoen i 4 minutter
+end=$((SECONDS+240))
+while [ $SECONDS -lt $end ]; do
+ls >/dev/null
+done
+
+eller
+#!/bin/bash
+while
+        true
+do true
+done
+
+
+****************
+
+ $ ./stortjob.sh &		#(almindelig jobstart: nice værdi 0)
+ $ nice ./stortjob.sh & #(Starter job med default en nice værdi 10) 
+ $ nice -11 ./stortjob.sh & 	#(Starter og giver en nice værdi 11)
+ $ sudo nice --19 ./stortjob.sh &   #(niceværdi 20 = 1 prioritet)
+ 
+ Åbn nyt terminalvindue skriv  
+ $ top				#(Viser kørende processer)
+ $ renice -n -10 -p 3534 #(Gør proces nr. 3534 mindre ”nice”)
+	#renice: failed to set priority for 3534 (process ID)
+ $ sudo renice -n -10 -p 3534 #(Gør proces nr. 3534 mindre ”nice”)
+
+
+#****************************************************************************************#
+
+# SHELLEN
+
+################
+#10.6
+################
+
+WILDCARDS
+
+ ls -la fil*  
+ ls -la fil? 
+ ls -la fil[1-3] 
+ ls -la fil[x1] 
+ ls -la alf* \; fil*  # læg mærke til hvad backslash gør
+ ls -la alf* ; fil*   # sidste kommando fil* fejler, fordi det er der ikke moget der hedder
+
+################
+ø10.1
+################
+
+#Øvelse 10.1. a
+Find de wildcards til at liste de filer der opfylder følgende betingelser
+
+filnavn ender på .c
+filnavn på 4 tegn
+filnavn der indeholder A
+filnavn starter med fil
+
+#Øvelse 10.1. b
+Hvad sker her:
+ls *a a*
+og
+echo *a a*
+
+#Øvelse 10.1c
+Hvad sker her:
+echo ″*a a*″
+og
+echo ′*a a*′
+
+
+
+################
+lf10.1
+################
+LØSNINGSFORSLAG
+
+Øvelse 10.1 a
+ls -d *.c 
+ls -d ???? 
+ls -d *A* 
+ls -d fil* 
+
+
+
+################
+#10.7
+################
+ ls -la alf* \; fil*  	# ( Læg mærke til at denne kommando
+ 				 		# får returneret såvel stdout 
+				 		# som stderr til skærmen )
+
+################
+#10.7
+################
+
+ ls > nyfil 			#(Redirigering til stdout)
+
+ write bruger9 < nyfil 	#(Redirigering til stdin)
+
+
+ wall < nyfil  # indhold af 'nyfil' vises til samtlige brugere
+
+################
+#10.11
+################
+
+ ls -l | sort -n +4 | more
+
+
+################
+ø10.2
+################
+
+Redirigering
+#Øvelse 2. a
+Hvad er forskellen på:
+ls > lsfil | sort -r
+og
+ls | sort -r > lsfil
+
+#Øvelse 10.2. b
+Sorter linierne i filen SuperUsers efter efternavn og få de sorterede linier redirigeret til en fil, du kalder sort_navne
+
+Tilføj til sort_navne ved hjælp af kommandoen echo en linie med dit eget fornavn og efternavn samt dato
+
+Sorter nu linierne sort_navne i omvendt orden og skriv resultatet tilbage til filen sort_navne 
+
+#Øvelse 10.2. c
+Brug find til at lede i /home efter filer med navnet txt. Al output skal skrives til en fil med navnet find.log
+
+#Øvelse 10.2. d
+Hvad indeholder filen find.log efter følgende kommando:
+find .. -name '*.c' >find.log 2>&1 
+
+#Øvelse 10.2. e
+Hvad indeholder filen find.log efter følgende kommando:
+find .. -name '*.c' 2>&1 >find.log
+
+
+################
+lf10.2
+################
+LØSNINGSFORSLAG
+
+#Øvelse 10.2. a
+Den første læser en usorterede liste ind i filen: lsfil
+
+Den anden en sorteret liste
+
+#Øvelse 10.2. b
+sort -k2 SuperUsers > sort_navne 
+echo "Anders And $(date)" >> sort_navne 
+sort -ro sort_navne sort_navne 
+
+#Øvelse 10.2. c
+find /home 
+
+#Øvelse 10.2. d
+find .. -name '*.c' >find.log 2>&1
+filen find.log indeholder både en liste over filer og fejlmeddelelser
+stdout sendes til filen find.log og stderr sendes samme sted hen som stdout (nemlig  til filen find.log)
+
+#Øvelse 10.2. e
+find .. -name '*.c' 2>&1 >find.log
+filen find.log indeholder en liste over filer (fejlene blev udskrevet til skærmen)
+stderr(2) bliver sendt til skærmen (2>&1) da stdout(1) endnu er default (nemlig skærm),
+herefter bliver stdout(1) sendt til filen fejl.log
+
+################
+ø10.3
+################
+
+#øvelse 10.3. a
+Vis samtlige processer på din maskine med en skærmside ad gangen.
+
+#Øvelse 10.3. b
+Vis processer knyttet til root med en skærmside ad gangen.
+
+#Øvelse 10.3. c
+Linierne 17430-17437 fra filen bibel skal udskrives på skærmen med linienumre forrest.
+Gør det ved hjælp af flere kommandoer i en pipeline
+
+Tips: 
+cat -n sætter linjenumre på
+head viser begyndelsen af en datastrøm
+tail viser slutningen af en datastrøm
+
+
+
+#Øvelse 10.3. d
+Kør scriptet oftest og lad inddata komme fra filen bibel.word og skriv uddata til en fil.
+
+Lav en lang listning af filerne i /usr/bin og sorter linierne i omvendt orden efter filstørrelsen.  Vis output med en side af gangen.
+
+#Øvelse 10.3. e
+Hvad sker her:
+find .. -name '*.c' | less
+
+
+#Øvelse 10.3. f
+Åbn to vinduer og placer dem, så du kan se dem begge.
+Se navnet på det ene terminalvindue ved at køre kommandoen tty.
+
+Gå til det andet vindue, kør kommandoen date og rediriger output til det første vindue.
+
+################
+lf10.3
+################
+LØSNINGSFORSLAG
+
+
+#Øvelse 10.3. a
+ps -ef | less 
+
+#Øvelse 10.3. b
+ps -u root | less 
+
+
+#Øvelse 10.3. c
+cat -n bibel | head -17437 | tail -8 
+#eller 
+cat -n bibel | tail +17430 | head -8 
+
+#Øvelse 10.3. d
+./oftest < bibel.word > output 
+ls -l /usr/bin | sort -k5nr | less 
+
+#Øvelse 10.3. e 
+find .. -name '*.c' | less 
+
+
+
+
+################
+#10.13
+################
+
+sort kassebon > sorteret_kassebon &   #(Det afsluttende & søger for baggrundsproces)
+ 									 [1] 15440  #(jobnummer og procesnummer)
+
+ $  #(promten vender starks tilbage)
+ 
+tail sorteret_kassebon
+
+################
+#10.14
+################
+
+nohup sort fil > sortfil &
+
+################
+#10.15
+################
+
+ sleep 100 &       	#(Process startes i baggrunden)
+	[1] 15824 	
+ sleep 200 &  	#(Process startes i baggrunden)
+	[2] 15829
+ ps			#(list egne processer)
+ 
+ kill [processnummer]		#(kill processnummer 15824)
+ kill %2 		#(kill jobnummer 2)
+ kill -L 		#(Viser de kill signaler man kan sende) 
+ kill -13 (er default)  - Venter på der bliver ryddet op inden processen lukkes.
+ kill -9   Lukker processen ned uden at rydde op
+ kill -19  1234 Sætter processen 1234 på pause (SIGSTOP)
+ kill -18  1234 Fortsætter processen 1234   (SIGCONT)
+
+ 1) SIGHUP	 2) SIGINT	 3) SIGQUIT	 4) SIGILL	 5) SIGTRAP
+ 6) SIGABRT	 7) SIGBUS	 8) SIGFPE	 9) SIGKILL	10) SIGUSR1
+11) SIGSEGV	12) SIGUSR2	13) SIGPIPE	14) SIGALRM	15) SIGTERM
+16) SIGSTKFLT	17) SIGCHLD	18) SIGCONT	19) SIGSTOP	20) SIGTSTP
+21) SIGTTIN	22) SIGTTOU	23) SIGURG	24) SIGXCPU	25) SIGXFSZ
+26) SIGVTALRM	27) SIGPROF	28) SIGWINCH	29) SIGIO	30) SIGPWR
+31) SIGSYS	34) SIGRTMIN	
+
+################
+#10.16
+################
+
+  echo $HOME		#(Viser stien til dit hjemmekatalog)
+  echo $MAIL		#(Viser stien til mailkataloget)
+  echo $PATH      	#(Viser de kataloger shellen først søger i, når et program skal køres)
+  echo $PS1 		#(Titlen på Shell-promt 1 )
+
+ STED='Ringsted'   #(Opretter den midlertidige variabel STED)
+ export STED   #(Variablen STED kopieres til environment)
+ echo $STED   
+ env		  #(Viser invironment variabler)
+
+---
+ekstra
+vi ~/.proflle  (læg dine variable ind her for at gøre dem permanente efter nyt login)
+                 eller .bash_proflle
+  
+################
+#10.17
+################
+  alias CD='cd ~/Desktop #(CD med stort leder dig til desktop)
+  alias gx='chmod +x'	   #(gx = gør eksekverbar)
+  type ls   		#ls is aliased to `ls –color=auto'
+			  Standard i Ubuntu Mate
+
+----
+
+  unalias CD  #(fjerner alias for CD)
+################
+ø10.4
+################
+
+#Øvelse 10.4. a
+Udskriv indholdet af følgende variable:
+HOME
+PATH
+TERM
+PS1
+LOGNAME
+PWD
+
+#Øvelse 10.4. b
+Kan du ændre din promt fra 
+$ █
+til:
+Yes, Sir?> █
+Gnädige Frau?> █
+
+…eller til maskinens navn 
+(variablen HOST)
+fx.:
+embla.k1.sulocal.dk:
+
+################
+lf10.4
+################
+INGEN LØSNINGSFORSLAG
+
+
+################
+#10.19
+################
+
+vi mit_script.sh
+
+#/*********************************
+
+#!/bin/bash
+ # Dette er et shell-script 
+ # ved navn goddag.bash
+ # Scriptet udføres ved at 
+ # skrive navnet og trykke
+ # RETUR.
+ date
+ echo
+ echo Kære $LOGNAME
+ echo
+ echo Indloggede personer:
+ echo
+ who
+
+#*********************************/
+
+################
+#10.20
+################
+
+
+
+  bash mit_script.sh 		     #(Manuelt fra barne-shell)
+  . /home/bruger1/mit_script.sh  #(Med fuld stiangivelse)
+  . ./mit_script.sh 			 #(Med relativ stiangivelse)
+
+  chmod +x mit_script.sh  #(Hvis du får permission denided)
+
+################
+#10.21
+################
+
+ echo "Dette er en liste:  $(ls fil.*)"
+						   Dette er en liste:  fil.a 
+						   fil.b
+
+ echo 'Dette er en liste:  $(ls fil.*)'
+  						 Dette er en liste:  $(ls fil.*)
+
+ echo 'Backslash med enkeltplinger  \' "g med dobbeltplinger: \"
+   > 
+
+################
+ø10.5
+################
+Plinger
+#Øvelse 10.5. a
+Afprøv og forklar forskellen mellem 
+
+sted=Karlebo Kro
+sted=″Karlebo Kro″
+sted=′Karlebo Kro′
+
+#Øvelse 10.5. b
+Afprøv og forklar forskellen mellem 
+ls -l sat*
+ls -l ″sat*″
+ls -l ′sat*′
+
+#Øvelse 10.. c
+Afprøv og forklar forskellen mellem 
+echo I dag er det: $(date)
+echo ″I dag er det: $(date)″
+echo ′I dag er det: $(date)′ 
+    
+#BONUSINFO:
+echo "I dag er det $(LANG=da_DK.UTF-8 date +'%A d. %d. %B %Y')"
+
+#Øvelse 10.5. d
+Hvad sker her:
+echo Der er \ og "\" og '\'
+
+#Øvelse 5. e
+Kan du ændre din prompt, så den viser aktuelle katalog (variablen PWD) og bliver ændret hver gang man bruger cd-kommandoen.
+
+/home/joe: cd tmp
+/home/joe/tmp: cd /tmp
+
+
+################
+lf0.5
+################
+
+#Øvelse 10.5. e 
+PS1='$PWD: '
+eller
+PS1='$(pwd): ' 
+
+################
+ø10.6
+################
+#Øvelse 10.6. a
+Skriv et script, der laver en listning af de filer, der har 3, 4 eller 5 tegn i filnavnet.
+Udskriv forklarende overskrifter.
+Slut af med udskrivning af dato og navn.
+
+Eksempel på output:
+
+Filnavne på 3 tegn:
+-rwxr-xr-x    1 kresten  users       50213 Oct  5  2008 txt
+…
+Filnavne på 4 tegn:
+-r--r--r--    1 kresten  users         469 Jun 15 14:39 lark
+…
+Filnavne på 5 tegn:
+-rw-r--r--    1 kresten  users     3877682 Jun  7 15:16 bibel
+…
+Rapport fra Wed Jun 27 15:50:32 CEST 2012 af: joe
+
+
+################
+lf10.6
+################
+
+#Øvelse 10.6. a
+
+#!/bin/bash
+echo Filnavne på 3 tegn: 
+ls -ld ??? 
+echo 
+
+echo Filnavne på 4 tegn: 
+ls -ld ???? 
+echo 
+
+echo Filnavne på 5 tegn: 
+ls -ld ?????
+echo 
+
+echo Rapport fra $(date) af: $LOGNAME
+
+#****************************************************************************************#
+TIDSAFHÆNGIG JOBSTART
+
+################
+#11.4
+################
+VENT EVT TIL 11.6 Før du kører et eksempel.
+
+at now + 2 minutes  #at>  # AFLUTTES MED CTRL+D
+  echo “Det er nu tid til kaffe”
+
+################
+#11.5
+################
+
+  at 9
+  at 09
+  at 0915
+  at 09:15
+  at 09:15 am
+  at 09:15 pm
+  at 09:15 zulu
+  at 9 A	  #(svarer til 9 am)
+  at 9 P 	  #(svarer til 9 pm)
+  at noon
+  at midnight
+  at now + 5 minutes
+  at now + 1 weeks
+  at noon + 3 days
+  at 2000 Mar 21
+  at 22:15 Monday
+
+################
+#11.6
+################
+
+ at 14:00 #( til at> promt)
+  ls -l
+ at>  #(CTRL+d afslutter kommandolisten)
+
+
+# Eksempel på læsning fra fil:
+at now + 2 minutes
+   ls -l > lsfil
+   echo Det var det >> lsfil #(Linje tilføjes til jobbet lsfil)
+ at>
+    #(CTRL+d afslutter kommandolisten)
+
+cat lsfil
+
+Eksempel afvikling af job på et givent tidspunkt:
+
+echo "~/mitscript.sh" | at 1700 #(Kører mitjob.sh kl. 17 )
+
+################
+#11.9
+################
+
+Første eksempel på en contab fil: KØRES IKKE
+
+/*****************************
+#!/bin/bash
+# Backup hver nat kl. 1.00 af database
+0 2 * * * /bin/sh backup_db.sh
+# Backup hver nat kl. 1.00 af hjemmeside kataloget
+0 1 * * * /bin/sh backup_mysite.sh
+# Job der afvikles hvert 10. minut til at vise aktiviteter
+*/10 * * * * /scripts/monitor.sh
+
+********************************/
+ 
+
+crontab -e
+
+ #!/bin/bash
+ #bruger aktiviter hvert 5 minut  (ser hvem der er logget på maskinen):
+ */5 * * * * who >> echo"\n*********\n" >> /home/bruger/aktiviteter 2>&1
+
+
+################
+Ø11
+################
+
+Øvelse 11.1. a
+Udfør om 2 minutter en lang listning af dit nuværende arbejdskatalog. 
+(Output mailes til dit kursus-brugernavn)
+
+Når mailen er modtaget, kan du læse den med kommandoen: mail
+
+Øvelse 11.1. b
+Opret om 5 minutter en ny fil ved navn sangbog, der skal indeholde filerne sat1 og lark1
+
+Øvelse 11.1. c
+Opret om 5 minutter en ny fil ved navn vers1
+Filen må kun indeholde de første 4 linjer af filerne sat1 og lark1
+
+Øvelse 11.1. d
+Afsend med mail kl 15:45 meddelelsen Klokken er 15:45 og vi går snart hjem
+
+Øvelse 11.1. e
+Udfør denne kommando om 10 minutter:
+cp lark lark.ny
+
+Øvelse 11.2. a
+Se hvilke jobs du har liggende til udførelse.
+
+Øvelse 11.2. b
+Fjern et af jobbene.
+
+Øvelse 11.2. c
+Undersøg hvornår det er teatime.
+Prøv kommandoen:
+echo ls | at teatime
+
+################
+LF11
+################
+
+Øvelse 11.1. a
+at now + 2 minutes
+ls -l
+<EOT>
+CTRL+D
+
+Øvelse 11.1. b
+at now + 5 minutes
+cat sat1 lark1 > sangbog
+<EOT>
+CTRL+D
+
+Øvelse 11.1. c
+at now + 5 minutes
+head -4 sat1 lark1 > vers1
+<EOT>
+CTRL+D
+
+Øvelse 11.1. d
+at 15:45
+	echo “Kl. Er 15:45 og vi går snart hjem”
+
+CTRL+D
+
+Øvelse 11.1. e
+at now + 5 minutes
+	cp lark lark.ny
+
+CTRL+D
+
+
+Øvelse 11.2. a
+atq
+eller
+at -l
+
+Øvelse 11.2. a
+echo ls | at teatime
+atq
+
+#########################
+#12
+#########################
+Modul 12 - Brugere
+Gennemgå slides
+
+#########################
+LF12
+#########################
+
+Øvelse 12.1. a  og Øvelse 12.1. b
+
+vi mit_script.sh
+
+#!/bin/bash
+ # Dette er et shell-script 
+ # der laver en udskrivning af dato, klokkeslet, m.v.
+ date
+ echo
+ echo Kære $LOGNAME
+ echo
+ echo Indloggede personer:
+ echo
+ who | sort
+
+For at scriptet skal kunne afvikles, skal det gøres eksekverbart:
+
+chmod +x  mit_script.sh
+
+./ mit_script.sh
+eller
+sh mit_script.sh
+
+Øvelse 12.3. a - c
+Ingen løsningsforslag - prøv selv:
+
+Øvelse 12.3. a
+Ændre dit bruger-id, så du udgiver dig for en anden af brugerne på holdet.
+Udfør whoami-kommandoen.
+Log tilbage med ^d  (Ctrl+d).
+
+Log ind på instruktørmaskinen og se på output fra who kommandoen.
+
+Skift user-id med:
+su - bruger9
+(password: password)
+
+Check dit nuværende user ID med id kommandoen
+logname kommandoen
+samt
+who kommandoen
+whoami kommandoen
+og bemærk forskellene.
+
+Øvelse 12.4. a
+grep 'bruger*' /etc/passwd
+
+
+
+
+#########################
+#13.6
+#########################
+
+  chmod u+x fil1   #(Brugeren tildeles rettigheder til at eksekvere filen)
+  chmod g-w fil2   #(Gruppen får frataget skriverettigheder til filen)
+  chmod a+r fil3   #(Andre tildeles læserettigheder til filen)
+  chmod +r fil1    #(Brugere, gruppen og andre tildeles læserettigheder)
+
+
+#########################
+#13.8
+#########################
+
+ chmod 777 fil ;ls -l fil
+ 	-rwxrwxrwx 1 bruger bruger 1165 Nov 20 09:07 fil
+ chmod 000 fil ;ls -l fil
+ 	---------- 1 bruger bruger 1165 Nov 20 09:07 fil
+ chmod 751 fil ;ls -l fil
+	-rwxr-x--x 1 bruger bruger 1165 Nov 20 09:07 fil
+
+
+#########################
+#13.9
+#########################
+
+Det kræver root adgang at rette skifte ejer (SUDO) 
+
+ sudo chown bruger3 fil; ls -l fil
+ [sudo] password for bruger: 
+ 	-rwxr-x--x 1 bruger3 bruger 1165 Nov 20 09:07 fil
+
+ sudo chown bruger fil; ls -l fil
+ 	-rwxr-x--x 1 bruger bruger 1165 Nov 20 09:07 fil
+
+#########################
+#13.9
+#########################
+
+Følgende er KUN EKSEMPEL - exekveres ikke:
+
+  sudo chgrp gurues fil1
+  sudo chgrp staff fil2
+
+#########################
+#13.12
+#########################
+
+
+ umask   #(Vis nuværende umask-filter)
+ 	0000
+ 	
+ touch testrettighed
+
+ ls -l testrettighed
+
+ 	-rw-rw-rw- 1 bruger bruger 0 Nov 21 14:42 testrettighed
+
+ umask 033 ; touch testrettighed1
+ ls -l testrettighed1
+	 -rw-r--r-- 1 bruger bruger 0 Nov 21 14:39 testrettighed1
+ 
+ umask 777 ; touch testrettighed2
+ ls -l testrettighed2
+ 	---------- 1 bruger bruger 0 Nov 21 14:56 testrettighed2
+
+ 
+ umask 000 ; touch testrettighed3    #(standardrettigheder)
+
+ ls -l testrettighed*
+ 	-rw-rw-rw- 1 bruger bruger 0 Nov 21 14:57 testrettighed3
+
+#########################
+ø13.1
+#########################
+
+#Øvelse 1. a
+Opret en ny fil med navnet: fil.ret
+Se hvilke rettigheder filen har.
+
+Opret et symbolsk link til fil.ret med navnet: symbol.ret
+Se hvilke rettigheder det symbolske link har.
+
+Opret et nyt katalog med navnet: dir.ret
+Se hvilke rettigheder kataloget har.
+
+
+#Øvelse 1. b
+Opret et almindeligt link til fil.ret med navnet: link.ret
+Se hvilke rettigheder det almindelige link har.
+
+Du skal nu tilføje eksekveringsret til filen fil.ret:
+chmod +x fil.ret
+Se hvilke rettigheder er på filerne fil.ret og link.ret
+
+
+#########################
+lf13.1
+#########################
+
+
+
+#########################
+ø13.2
+#########################
+#Øvelse 2. a
+Opret en ny fil med navnet: fil.ret.1
+Du skal ændre rettighederne på filen med symbolske operatorer.
+Hver gang du ændrer noget, skal du kontrollere at det er sket:
+Tilføj eksekveringsret til brugerkategorien user (dig selv).
+Fratag group læseret.
+Tilføj skriveret for kategorien other.
+Fjern alle rettgheder for alle brugerkategorier.
+Tildel gruppen læse- og eksekveringsret.
+Tildel alle brugerkategorier alle rettigheder.
+
+
+#Øvelse 2. b
+Opret en ny fil med navnet: fil.ret.2
+Du skal ændre rettighederne på filen med oktale operatorer.
+Hver gang du ændrer noget, skal du kontrollere at det er sket:
+Tilføj eksekveringsret til brugerkategorien owner (dig selv).
+Fratag group læseret.
+Tilføj skriveret for kategorien other.
+Fjern alle rettgheder for alle brugerkategorier.
+Tildel gruppen læse- og eksekveringsret.
+Tildel alle brugerkategorier alle rettigheder.
+
+#########################
+lf13.2
+#########################
+
+
+
+#########################
+ø13.2
+#########################
+Øvelse 3. a
+Sæt umask til 000
+Opret en ny fil med navnet:
+fil.ret.3
+Se dens rettigheder. Dette er de ”nøgne” ublokerede standard-rettigheder.
+Du skal nu finde de værdier umask skal have for at nyoprettede almindelige filer får følgende rettigheder:
+
+rw- --- ---
+rw- rw- ---
+rw- rw- -w-
+--- --- ---
+
+Øvelse 3. b
+Hvornår skal man vælge umask 033 fremfor umask 022 ?
+
+Øvelse 3. c
+Hvad skal du huske m.h.t. din umask-værdi før du går videre med Øvelserne?
+
+#########################
+lf13.2
+#########################
+
+#Øvelse 3. a
+umask 0
+> fil.ret.3
+ls -l fil.ret.3
+
+umask 066
+rm fil.ret.3
+> fil.ret.3 
+
+umask 006
+rm fil.ret.3
+> fil.ret.3
+
+umask 004
+rm fil.ret.3
+> fil.ret.3
+
+umask 666
+rm fil.ret.3
+> fil.ret.3
+
+#Øvelse 3. b
+ touch
+#Øvelse 3. c
+
+
+/************************************************************************************************/
+
+Kopiering og komprimering
+
+#########################
+#14.2
+#########################
+Komprimering med gzip
+   
+  gzip -k bibel  
+        #(Komprimerer og beholder filen bibel opretter filen bibel.gz)
+  gzip -k -S .zip bibel  
+        #(Komprimerer og beholder filen bibel opretter filen bibel.zip)
+	
+  gzip -k fil1 fil2  
+        #(Komprimerer, beholder og gemmer de komprimerede filer:
+		 fil1.gz fil2.gz)
+  zcat bibel.gz    #(Viser indholdet af filen bibel.gz)
+  gzip -d bibel.gz #(Dekomprimerer filen bibel.gz)
+  gunzip bibel.gz  #(Dekomprimerer filen bibel.gz)
+
+#########################
+#14.3
+#########################
+Komprimering med bzip2
+
+ bzip2 -k bibel  
+        #(Komprimerer og beholder filen bibel opretter filen bibel.bz)
+	
+  bzip2 -k fil1 fil2  
+        #(Komprimerer, beholder og gemmer de komprimerede filer:
+		 fil1.bz fil2.bz)	
+
+  bzcat bibel.bz     #(Viser indholdet af filen bibel.bz)
+  bzip2 -d bibel.bz #(Dekomprimerer filen bibel.bz)
+  bunzip2 bibel.bz  #(Dekomprimerer filen bibel.bz)
+
+
+
+#########################
+#14.8
+#########################
+
+ tar -cvf tarfil.tar *.c  
+        #(Kopiérer alle *.c-filer til tarfil.tar)
+	
+ tar -cvf tarfil.tar /home/bruger1/brevdir 
+        #(Kopiérer kataloget og alle file i kataloget brevdir til tarfil.tar)	
+
+ tar -tvf tarfil.tar  
+ 	#(Viser liste over indholdet af filen tarfil.tar)
+
+
+ tar -xvf tarfil.tar filnavn1 filnavn2 
+ 	#(Udpakker og indlæser to udvalgte filer: filnavn1 filnavn2)
+
+#########################
+#14.9
+#########################
+
+ tar -czvf tarfil.tar.gz *.c  
+        #(Kopiérer alle *.c-filer til tarfil.tar.gz)
+	
+ tar -xzvf tarfil.tar.gz  
+ 	#(Udpakker og indlæser filerne fra tarfil.tar.gz - viser listen i forbindelse med indlæsningen)	
+
+#########################
+ø14.1
+#########################
+
+LAV KUN ØVELSE 1
+
+#Øvelse 1. a
+Gå til dit hjemmekatalog.
+Opret et nyt katalog: tardir
+
+Du skal vha. tar-kommandoen lave en backup-fil af fil1, fil2, fil3 og fil4 efter følgende regler:
+
+Filen skal hedde fil1-4.tar
+Den skal placeres i tardir
+Filerne skal angives uden stiangivelse 
+-o0o-
+List med ls -l -kommandoen filen fil1-4.tar
+List med tar-kommandoen ”backup-indholdet” af fil1-4.tar
+-o0o-
+Skift katalog til tardir
+Indlæs (extract) alle filerne i fil1-4.tar, så de bliver placeret i tardir
+Kontrollér, at det lykkedes.
+-o0o-
+Gå til underkataloget dir (i hjemmekataloget) og list filerne der er her og se deres indhold.
+
+Indlæs (extract) her fil1 og fil2 samt fil3 fra backuppen fil1-4.tar.
+Kontrollér, at det lykkedes, dels ved at liste filerne, dels ved at kigge på indholdet.
+
+#########################
+lf14.1
+#########################
+
+Løsningsforslag
+
+Øvelse 1.a
+
+cd 
+mkdir tardir 
+tar -cvf tardir/fil1-4.tar fil[1-4] 
+
+ls -l tardir/fil1-4.tar 
+
+tar -tvf tardir/fil1-4.tar 
+
+cd tardir/ 
+tar -xvf fil1-4.tar 
+ls -l 
+
+cd ~/dir 
+ls -l 
+cat * 
+
+tar -xvf ../tardir/fil1-4.tar fil1 fil2 fil3 
+
+ls -l fil1 fil2 fil3 
+cat fil1 fil2 fil3 
+
+
+
+
+***************************************''
+#
+#Øvelse 14.2. a
+Lav denne øvelse to gange. Første gang med bzip2-kommandoen og anden gang med gzip-kommandoen.
+
+Gå til dit hjemmekatalog.
+Find størrelsen på filen txt
+Komprimer txt
+Hvor meget fylder filen (txt.bz2 henholdsvis txt.gz) nu?
+Notér størrelsen på den komprimerede fil.
+Prøv at se indholdet af filen txt.bz2 henholdsvis txt.gz
+Komprimer txt.bz2 henholdsvis txt.gz
+Hvad skete der her?
+Dekomprimér den komprimerede fil.
+Kontroller at det er sket.
+Sammenlign de noterede størrelser af de to komprimeringer.
+
+#Øvelse 14.2. b
+Find størrelsen på backupfilerne fra de foregående Øvelser.
+Komprimer filerne og undersøg graden af komprimering.
+
+
+################################
+#15 Lokalnet, filoverførsel m.m.
+################################
+
+#15.3
+
+ $ ssh bruger1@192.168.2.101 	#lokal ip-adresse
+ $ ssh bruger@23.56.184.47 	#ekstern ip-adresse 
+ $ ssh bruger@dr.dk 		#eksternt domæne  
+
+
+#15.5 ssh-keygen
+
+ssh-keygen 	   #Danner en rsa-key
+
+ssh-keygen -b 521 -t ecdsa -f claus-ssh-key
+
+ 	#Det anbefales af nogen at bruge edsa i stedet for rsa
+	-b beskriver antal bits
+	-t beskriver typen
+	-f beskriver filnavnet  
+
+
+Ø15.1.a
+
+Lav et nøglesæt med ssh-keygen og læg den i .ssh kald det dit-navn-ssh-key
+
+LF: 
+ssh-keygen -f .ssh/peter-ssh-key
+
+Ø15.1.b
+Find de 2 nøgler på din PC og læg mærke til filrettighederne
+
+LF:
+ls -l .ssh
+
+
+#15.7  Secure Copy - scp
+
+Kopiere fra extern til local host -  DOWNLOADE:
+scp bruger@193.88.250.77:/home/bruger/txt ~
+
+Downloade et helt katalog:
+scp -r bruger@193.88.250.77:/home/bruger/dir ~
+
+
+Kopier filen "fil1"  fra local til remote host - UPLOADE
+scp ~/fil1 bruger@193.88.250.77:/home/bruger
+
+
+Ø15.2
+a.	Log på instruktør computeren med ssh, som det brugernavn du får anvist af instruktøren.
+
+b.	Opret en mappe ved med dit eget fornavn eller efternavn i hjemmekataloget
+
+c.	Opret 3 filer i det nye katalog med indhold fra nogle af filerne fra hjemmekataloget, kald filerne min-fil1, min-fil2 og min-fil3
+
+d.	Åbn et nyt terminalvindue
+
+e.	Kopier en det nyoprettede katalog over i hjemmekataloget på din kursus PC
+
+f.	Tjek om det hele er gået godt. Ved at liste indholdet af det nye katalog på din kursus PC
+
+LF15.2
+	a. ssh bruger9@192.168.4.101
+ 	b.  mkdir claus
+    c.  cat fil1 >claus/min-fil1
+        cat fil2 >claus/min-fil2
+        cat bibel >claus/min-fil3
+	d.
+    	CTRL+N
+
+    e.	scp -r bruger9@192.168.4.101:/home/bruger2/claus ~
+
+	f. ls -l .ssh
+
+
+#15.8 - rsync
+
+rsync -avz  -e ssh  bruger@remotehost.dk:/et/eksternt/katalog      ~/lokalt	
+	     # Tager eksternt ”katalog”, pakker det, sender til lokalt ”katalog”	
+		 pakker det ud og syncroniserer
+
+rsync -avz -e ssh   ~/lokalt/katalog    bruger@remotehost.dk:/et/eksternt			 
+	# Tager lokalt ”katalog”, pakker det, sender til eksternt ”katalog”	
+		 pakker det ud og syncroniserer
+
+Ovennævnte tilføjer kun ikke eksisterende filer i et katalog
+
+Til brug for backup af et eksternt katalog:
+rsync --archive --verbose --compress --progress --recursive --times --perms --links --delete  -e ssh bruger1@192.168.7.101:/home/bruger1/testRsync ~/
+
+rsync -avzhrtple ssh bruger1@192.168.7.101:/home/bruger1/testRsync ~/
+
+
+Ø15.x ( vedr rsync udgår ind til videre)
+
+#15.12 Shellscript med  Pipe Viewer (pv):      [   <=>            ]
+
+	vi 50sek.sh
+
+ #################################################
+ #!/bin/bash
+ #job der hvert sekund gentager ordet test  i 50 sekunder
+ end=$((SECONDS+50))
+ while [ $SECONDS -lt $end ]; 
+ do
+        echo "test" ;
+        sleep 1;
+ done
+ #################################################
+
+ chmod +x 50sek.sh
+  ./50sek.sh | pv    				#udskriver "test" til skærmen
+  
+ HVIS pv ikke er installeret:
+  CTRL+SHIFT+N
+ su bruger
+ sudo apt install pv
+  ./50sek.sh | pv > /dev/null   	#læser ikke "test" ud til skærmen men viser alene pv baren
+
+
+#15.13   Shellscript med ’dialog’  (En grafisk process-bar)
+
+ vi dialog.sh
+
+ #################################################
+ #!/bin/bash
+ for i in $(seq 0 10 100) ;
+ do sleep 1;
+  echo $i | dialog --gauge "Vent venligst" 10 70 0;
+ done;
+ clear
+ #################################################
+
+ chmod +x dialog.sh
+ ./dialog.sh 
+
+
+Ø15.3
+		En fri opgave:
+
+	Prøv at lave et shellscript, med nogle af de kommandoer du har lært på kurset. 
+    Se om du kan få shelllscriptet til at køre
+	Test om det gav det ønskede resultat.
+
+
+
+###############################################################
+#
+#  STÆRKT DØDELIGE KOMMANDOER !!!!!
+#
+#  https://www.howtogeek.com/125157/8-deadly-commands-you-should-never-run-on-linux/ 
+#
+##############################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
